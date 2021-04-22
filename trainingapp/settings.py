@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_extensions',
+    'bootstrap4',
+    'bootstrap_datepicker_plus',
+
     'users',
     'athletes'
 ]
