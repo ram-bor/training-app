@@ -11,7 +11,7 @@ class Athlete(models.Model):
     run_longest_distance = models.DecimalField(max_digits=5, decimal_places=2)
 
 
-class Sport(models.Model):
+class Training(models.Model):
     RUN = 'R'
     SWIM = 'S'
     BIKE = 'B'
