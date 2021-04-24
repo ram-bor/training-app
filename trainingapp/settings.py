@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django_extensions',
     'bootstrap4',
     'bootstrap_datepicker_plus',
+    'rest_framework',
 
     'users',
     'athletes'
