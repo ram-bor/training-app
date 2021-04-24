@@ -7,7 +7,7 @@ class DateForm(forms.Form):
         widget=DatePickerInput(
             options={
                 "format": "mm/dd/yyyy",
-                "autoclose": True
+                "autoclose": True 
             }
         )
     )
