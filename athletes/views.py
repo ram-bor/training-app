@@ -1,7 +1,7 @@
-from django.shortcuts import render
+from django.views import View
+from django.shortcuts import render, redirect
 # from .forms import UserForm
 # from .forms import AthleteForm
-from django.views import View
 
 # Create your views here.
 
