@@ -6,10 +6,14 @@ from django.views import View
 
 
 class AthleteCreate(View):
-
     def get(self, request):
         athlete_form = UserForm()
-        return render(request, 'athlete_form.html', {'my_form': athlete_form})
-    
+        return render(request, 'athlete_form.html', {'form': athlete_form})
+
     def post(self, request):
-        athlete_form = UserForm():
+        athlete_form = UserForm(request.POST)
+        if form.is_valid():
+            athlete = form.save()
+            return redirect('athlete_detail', pk=athlete.pk)
+
+    return render(request, 'athlete_form.html', {'form': athlete_form})
