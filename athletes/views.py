@@ -3,8 +3,9 @@ from django.shortcuts import render, redirect
 # from .forms import UserForm
 # from .forms import AthleteForm
 
-# Create your views here.
 
+
+# Create your views here.
 
 class AthleteCreate(View):
 
