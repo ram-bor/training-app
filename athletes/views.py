@@ -12,8 +12,8 @@ class AthleteCreate(View):
 
     def post(self, request):
         athlete_form = UserForm(request.POST)
-        if form.is_valid():
-            athlete = form.save()
+        if athlete_form.is_valid():
+            athlete = athlete_form.save()
             return redirect('athlete_detail', pk=athlete.pk)
 
-    return render(request, 'athlete_form.html', {'form': athlete_form})
+        return render(request, 'athlete_form.html', {'form': athlete_form})
