@@ -1,6 +1,6 @@
 from rest_framework_simplejwt import views as jwt_views
 from . import views
-rom django.urls import path
+from django.urls import path
 
 urlpatterns = [
     path('api/token/', jwt_views.TokenObtainPairView.as_view(),
