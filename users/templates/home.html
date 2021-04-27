@@ -7,10 +7,13 @@
 <h1>Welcome {{ user.email }}!</h1>
 <h3> (Will authenticate whether user has athlete information ready) </h3>
 <h3> (Dashboard will display here) </h3>
-<p><a href="{% url 'logout' %}">Log Out</a></p>
-{% else %}
-<p>You are not logged in</p>
-<a href="{% url 'login' %}">Log In</a> |
-<a href="{% url 'signup' %}">Sign Up</a>
-{% endif %}
-{% endblock %}
+<button>click me for athlete info
+    <a href="{% url 'athlete_create'%}""></a>
+</button>
+<p><a href=" {% url 'logout' %}">Log Out</a></p>
+    {% else %}
+    <p>You are not logged in</p>
+    <a href="{% url 'login' %}">Log In</a> |
+    <a href="{% url 'signup' %}">Sign Up</a>
+    {% endif %}
+    {% endblock %}
