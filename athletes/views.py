@@ -1,6 +1,6 @@
 from django.views import View
 from django.shortcuts import render, redirect
-# from .forms import UserForm
+from .models import Athlete, Training
 from .forms import AthleteForm
 
 
@@ -22,4 +22,4 @@ from .forms import AthleteForm
 
 class AthleteInfo(view):
     def get(self, request):
-        athlete = 
+        athlete =
