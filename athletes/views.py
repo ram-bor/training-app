@@ -2,6 +2,8 @@ from django.views import View
 from django.shortcuts import render, redirect
 from .models import Athlete, Training
 from .forms import AthleteForm
+from rest_framework import generics
+from .serializers import AthleteSerializer
 
 
 # Create your views here.
@@ -22,4 +24,5 @@ from .forms import AthleteForm
 
 class AthleteInfo(view):
     def get(self, request):
-        athlete =
+        queryset = Athlete.objects.all()
+        
