@@ -19,12 +19,12 @@ class TrainingForm(forms.Form):
                   'planned_duration', 'duraction', 'hour_avg',)
 
 
-class DateForm(forms.Form):
-    date = forms.DateField(
-        widget=DatePickerInput(
-            options={
-                "format": "mm/dd/yyyy",
-                "autoclose": True
-            }
-        )
-    )
+# class DateForm(forms.Form):
+#     date = forms.DateField(
+#         widget=DatePickerInput(
+#             options={
+#                 "format": "mm/dd/yyyy",
+#                 "autoclose": True
+#             }
+#         )
+#     )

@@ -10,6 +10,9 @@ class Athlete(models.Model):
     threshold_hr = models.IntegerField()
     run_longest_distance = models.DecimalField(max_digits=5, decimal_places=2)
 
+    def __str__(self):
+        return self.first_name + '' + self.last_name
+
 
 class Training(models.Model):
     RUN = 'R'
