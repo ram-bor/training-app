@@ -9,11 +9,13 @@ class AthleteForm(forms.ModelForm):
         model = Athlete
         fields = ('first_name', 'last_name', 'birth_date',
                   'threshold_hr', 'run_longest_distance',)
-        widget = {
+        widgets = {
             'birth_date': DatePickerInput(
                 options={
                     "format": "mm/dd/yyyy",
-                    "autoclose": True
+                    "showClose": True,
+                    "showClear": True,
+                    "keepOpen": True
                 }
             )
         }
@@ -25,7 +27,7 @@ class TrainingForm(forms.ModelForm):
         model = Training
         fields = ('sport_type', 'athlete', 'date',
                   'planned_duration', 'duration', 'hour_avg',)
-        widget = {
+        widgets = {
             'date': DatePickerInput(
                 options={
                     "format": "mm/dd/yyyy",
@@ -35,9 +37,3 @@ class TrainingForm(forms.ModelForm):
                 }
             )
         }
-
-
-class DateForm(forms.ModelForm):
-    date = forms.DateField(
-
-    )
