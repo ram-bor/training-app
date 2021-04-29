@@ -6,6 +6,7 @@ class AthleteSerializer(serializers.HyperlinkedModelSerializer):
     training = serializers.HyperlinkedRelatedField(
         view_name='athlete_info',
         many=True,
+        read_only=True
     )
 
     class Meta:

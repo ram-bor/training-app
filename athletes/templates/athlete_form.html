@@ -1,6 +1,7 @@
 {% extends 'base.html' %} {% block content %}
 <h1>New Athlete</h1>
 <form method="POST" class="athlete-form">
-    {% csrf_token %} 
+    {% csrf_token %} {{ form }}
+    <button type="submit">Submit</button>
 </form>
 {%  endblock %}
