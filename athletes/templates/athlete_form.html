@@ -1,4 +1,6 @@
 {% extends 'base.html' %} {% block content %}
+{% load bootstrap3 %}
+
 <h1>New Athlete</h1>
 <form method="POST" class="athlete-form">
     {% csrf_token %}

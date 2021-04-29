@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_extensions',
     'livereload',
-    'bootstrap4',
+    'bootstrap3',
     'bootstrap_datepicker_plus',
     'rest_framework',
     'corsheaders',
