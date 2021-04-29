@@ -11,7 +11,7 @@ class Athlete(models.Model):
     run_longest_distance = models.DecimalField(max_digits=5, decimal_places=2)
 
     def __str__(self):
-        return self.first_name + '' + self.last_name
+        return self.first_name + ' ' + self.last_name
 
 
 class Training(models.Model):
@@ -23,6 +23,7 @@ class Training(models.Model):
         (SWIM, 'Swim'),
         (BIKE, 'Bike')
     ]
+
     sport_type = models.CharField(
         max_length=32,
         choices=SPORT_CHOICES,
@@ -33,5 +34,5 @@ class Training(models.Model):
         Athlete, on_delete=models.CASCADE, related_name='workouts')
     date = models.DateField()
     planned_duration = models.TimeField(blank=True, null=True)
-    duration = models.TimeField()
+    completed_duration = models.TimeField()
     hour_avg = models.TimeField()
