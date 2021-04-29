@@ -12,10 +12,10 @@ class AthleteForm(forms.ModelForm):
         widgets = {
             'birth_date': DatePickerInput(
                 options={
-                    "format": "mm/dd/yyyy",
-                    "showClose": True,
-                    "showClear": True,
-                    "keepOpen": True
+                    "format": "MM/DD/YYYY",
+                    "showClose": False,
+                    "showClear": False,
+                    "showTodayButton": False,
                 }
             )
         }
@@ -30,9 +30,9 @@ class TrainingForm(forms.ModelForm):
         widgets = {
             'date': DatePickerInput(
                 options={
-                    "format": "mm/dd/yyyy",
-                    "showClose": True,
-                    "showClear": True,
+                    "format": "MM/DD/YYYY",
+                    "showClose": False,
+                    "showClear": False,
                     "showTodayButton": True,
                 }
             )
