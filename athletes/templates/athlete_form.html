@@ -5,14 +5,15 @@
 {{ form.media }}
 
 
-<h1>New Athlete</h1>
+<h2 class="athlete-form-header">New Athlete Form</h2>
+<div class="form-div">
+    <form method="POST" class="athlete-form">
+        {% csrf_token %}
+        {{ form.as_p}}
 
-<form method="POST" class="athlete-form">
-    {% csrf_token %}
-    {{ form.as_p}}
-
-    {% buttons %}
-    <button type="submit" class="btn btn-primary">Submit</button>
-    {% endbuttons %}
-</form>
+        {% buttons %}
+        <button type="submit" class="btn btn-warning">Submit</button>
+        {% endbuttons %}
+    </form>
+</div>
 {% endblock %}
