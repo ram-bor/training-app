@@ -11,7 +11,7 @@ from django.urls import reverse_lazy
 
 class AthleteCreate(View):
     form_class = AthleteForm
-    template_name = 'athletes/athlete_form.html'
+    template_name = 'athlete_form.html'
 
     def get(self, request):
         form = self.form_class()
