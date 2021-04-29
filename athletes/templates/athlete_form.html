@@ -1,10 +1,17 @@
 {% extends 'base.html' %} {% block content %}
-{% load bootstrap3 %}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+{{ form.media }}
 
 <h1>New Athlete</h1>
+
 <form method="POST" class="athlete-form">
     {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Submit</button>
+    {{ form.as_p}}
+
+    {% buttons %}
+    <button type="submit" class="btn btn-primary">Submit</button>
+    {% endbuttons %}
 </form>
-{%  endblock %}
+{% endblock %}

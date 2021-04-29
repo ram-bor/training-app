@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_extensions',
     'livereload',
-    'bootstrap3',
+    'bootstrap4',
     'bootstrap_datepicker_plus',
     'rest_framework',
     'corsheaders',
@@ -178,4 +178,8 @@ SIMPLE_JWT = {
     'SLIDING_TOKEN_REFRESH_EXP_CLAIM': 'refresh_exp',
     'SLIDING_TOKEN_LIFETIME': timedelta(minutes=5),
     'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=1),
+}
+
+BOOTSTRAP4 = {
+    'include_jquery': True,
 }
