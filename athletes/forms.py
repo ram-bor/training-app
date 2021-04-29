@@ -26,7 +26,7 @@ class TrainingForm(forms.ModelForm):
     class Meta:
         model = Training
         fields = ('sport_type', 'athlete', 'date',
-                  'planned_duration', 'duration', 'hour_avg',)
+                  'planned_duration', 'completed_duration', 'hour_avg',)
         widgets = {
             'date': DatePickerInput(
                 options={
