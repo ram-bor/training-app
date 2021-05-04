@@ -30,7 +30,7 @@ class AthleteCreate(View):
 class AthleteInfo(generics.RetrieveUpdateDestroyAPIView):
     queryset = Athlete.objects.all()
     serializer_class = AthleteSerializer
-    permissions_classes = (permissions.IsAuthenticated)
+    # permissions_classes = (permissions.IsAuthenticated)
 
 
 # def athlete_info(request, pk):
