@@ -8,6 +8,9 @@ class AthleteSerializer(serializers.HyperlinkedModelSerializer):
         many=True,
         read_only=True
     )
+    athlete_url = serializers.ModelSerializer.serializer_url_field(
+        view_name='artist_detail'
+    )
 
     class Meta:
         model = Athlete
