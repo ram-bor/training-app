@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 # Create your models here.
 
@@ -41,4 +42,4 @@ class Training(models.Model):
         return self.athlete
 
     def get_absolute_url(self):
-        return reverse('song_detail', kwargs={'pk': self.pk})
+        return reverse('athlete_info', kwargs={'pk': self.pk})
