@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views import View
+from django.views.generic import ListView, DetailView
 from .models import Athlete, Training
 from .forms import AthleteForm, TrainingForm
 from rest_framework import generics, permissions

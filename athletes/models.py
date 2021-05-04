@@ -36,3 +36,9 @@ class Training(models.Model):
     planned_duration = models.TimeField(blank=True, null=True)
     completed_duration = models.TimeField()
     hour_avg = models.TimeField()
+
+    def __str__(self):
+        return self.athlete
+
+    def get_absolute_url(self):
+        return reverse('song_detail', kwargs={'pk': self.pk})
