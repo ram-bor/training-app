@@ -16,3 +16,13 @@ class AthleteSerializer(serializers.HyperlinkedModelSerializer):
         model = Athlete
         fields = ('id', 'first_name', 'last_name', 'birth_date',
                   'threshold_hr', 'run_longest_distance', 'training')
+
+
+class SongSerializer(serializers.HyperlinkedModelSerializer):
+    training = serializers.PrimaryKeyRelatedField(
+        queryset=Athlete.objects.all())
+
+    class Meta:
+        model = Training
+        fields = ('id', 'athlete', 'sport_type', 'date',
+                  'planned_duration', 'completed_duration', 'hour_avg')
