@@ -3,7 +3,7 @@ from .models import Athlete, Training
 
 
 class AthleteSerializer(serializers.HyperlinkedModelSerializer):
-    training = serializers.HyperlinkedRelatedField(
+    trainings = serializers.HyperlinkedRelatedField(
         view_name='athlete_info',
         many=True,
         read_only=True
@@ -15,7 +15,7 @@ class AthleteSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Athlete
         fields = ('id', 'first_name', 'last_name', 'birth_date',
-                  'threshold_hr', 'run_longest_distance', 'trainings')
+                  'threshold_hr', 'run_longest_distance', 'trainings', 'athlete_url')
 
 
 class TrainingSerializer(serializers.HyperlinkedModelSerializer):
