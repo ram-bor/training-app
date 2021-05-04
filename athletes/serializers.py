@@ -9,16 +9,16 @@ class AthleteSerializer(serializers.HyperlinkedModelSerializer):
         read_only=True
     )
     athlete_url = serializers.ModelSerializer.serializer_url_field(
-        view_name='artist_detail'
+        view_name='athlete_info'
     )
 
     class Meta:
         model = Athlete
         fields = ('id', 'first_name', 'last_name', 'birth_date',
-                  'threshold_hr', 'run_longest_distance', 'training')
+                  'threshold_hr', 'run_longest_distance', 'trainings')
 
 
-class SongSerializer(serializers.HyperlinkedModelSerializer):
+class TrainingSerializer(serializers.HyperlinkedModelSerializer):
     training = serializers.PrimaryKeyRelatedField(
         queryset=Athlete.objects.all())
 

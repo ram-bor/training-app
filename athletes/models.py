@@ -32,7 +32,7 @@ class Training(models.Model):
     )
 
     athlete = models.ForeignKey(
-        Athlete, on_delete=models.CASCADE, related_name='workouts')
+        Athlete, on_delete=models.CASCADE, related_name='trainings')
     date = models.DateField()
     planned_duration = models.TimeField(blank=True, null=True)
     completed_duration = models.TimeField()
