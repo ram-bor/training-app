@@ -1,13 +1,14 @@
 from django.shortcuts import render, redirect
+from django.urls import reverse_lazy
+from .serializers import AthleteSerializer, TrainingSerializer
 from django.views import View
 from django.views.generic import ListView, DetailView
 from .models import Athlete, Training
 from .forms import AthleteForm, TrainingForm
+from django.http import HttpResponse, JsonResponse
 from rest_framework import generics, permissions
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from .serializers import AthleteSerializer
-from django.urls import reverse_lazy
 
 
 # Create your views here.
@@ -36,7 +37,7 @@ class AthleteCreate(View):
     # permissions_classes = (permissions.IsAuthenticated)
 
 class AthleteInfo(APIView):
-    template_name = 'athlete_info.html'
+    # template_name = 'athlete_info.html'
 
     def get_athlete(self, pk):
         try:
