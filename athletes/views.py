@@ -27,15 +27,15 @@ class AthleteCreate(View):
         return render(request, self.template_name, {'form': form})
 
 
-class AthleteInfo(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Athlete.objects.all()
-    serializer_class = AthleteSerializer
+# class AthleteInfo(generics.RetrieveUpdateDestroyAPIView):
+class AthleteInfo(View):
+    def athlete_info(self, request, pk):
+        athlete = Athlete.objects.get(pk=pk)
+        return render(request, 'athletes/athlete_info.html', {'athlete': athlete})
+
+    # queryset = Athlete.objects.get(pk=pk)
+    # serializer_class = AthleteSerializer
     # permissions_classes = (permissions.IsAuthenticated)
-
-
-# def athlete_info(request, pk):
-#     athlete = Athlete.objects.get(pk=pk)
-#     return render(request, 'athletes/athlete_info.html', {'athlete': athlete})
 
 
 class TrainingCreate(View):
