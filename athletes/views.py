@@ -35,11 +35,6 @@ class AthleteList(generics.ListCreateAPIView):
     serializer_class = AthleteSerializer
 
 
-def random_function() {
-    print('hello world')
-}
-
-
 class AthleteInfo(generics.RetrieveUpdateDestroyAPIView):
     queryset = Athlete.objects.all()
     serializer_class = AthleteSerializer
