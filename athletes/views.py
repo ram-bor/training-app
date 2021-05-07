@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect
 from django.views import View
-from django.views.generic import ListView, DetailView, ListAPIView
+from django.views.generic import ListView, DetailView
 from .models import Athlete, Training
 from .forms import AthleteForm, TrainingForm
 from rest_framework import generics, permissions
+from rest_framework.views import APIView
 from rest_framework.response import Response
 from .serializers import AthleteSerializer
 from django.urls import reverse_lazy
@@ -37,26 +38,33 @@ class AthleteCreate(View):
 class AthleteInfo(APIView):
     template_name = 'athlete_info.html'
 
-    def get_athlete(self, request, pk):
-        athlete = Athlete.objects.get(pk=pk)
-        return Response()
+    def get_athlete(self, pk):
+        try:
+            return Athlete.objects.get(pk=pk)
+        except Athlete.DoesNotExist:
+            raise Http404
+
+    def get(self, request, pk):
+        athlete = self.get_athlete(pk)
+        serializer = AthleteSerializer(athlete)
+        return Response(serializer.data)
 
 
-# class TrainingCreate(View):
-#     form_class = TrainingForm
-#     template_name = 'training_form.html'
+class TrainingCreate(View):
+    form_class = TrainingForm
+    template_name = 'training_form.html'
 
-#     def get(self, request):
-#         form = self.form_class()
-#         return render(request, self.template_name, {'form': form})
+    def get(self, request):
+        form = self.form_class()
+        return render(request, self.template_name, {'form': form})
 
-#     def post(self, request):
-#         form = self.form_class(request.POST)
-#         if form.is_valid():
-#             training = form.save()
-#             return redirect('training_info', pk=training.pk)
+    def post(self, request):
+        form = self.form_class(request.POST)
+        if form.is_valid():
+            training = form.save()
+            return redirect('training_info', pk=training.pk)
 
-#         return render(request, self.template_name, {'form': form})
+        return render(request, self.template_name, {'form': form})
 
 
 # class TrainingDetail
