@@ -29,9 +29,11 @@ class AthleteCreate(View):
 
 # class AthleteInfo(generics.RetrieveUpdateDestroyAPIView):
 class AthleteInfo(View):
+    template_name = 'athlete_info.html'
+
     def athlete_info(self, request, pk):
-        athlete = Athlete.objects.get(pk=pk)
-        return render(request, 'athletes/athlete_info.html', {'athlete': athlete})
+        athlete = Athlete.objects.get(pk=3)
+        return render(request, self.template_name, athlete.pk)
 
     # queryset = Athlete.objects.get(pk=pk)
     # serializer_class = AthleteSerializer
