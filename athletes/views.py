@@ -41,13 +41,13 @@ class AthleteInfo(generics.RetrieveUpdateDestroyAPIView):
     permissions_classes = (permissions.IsAuthenticated)
 
 # class AthleteInfo(APIView):
-    # template_name = 'athlete_info.html'
+#     template_name = 'athlete_info.html'
 
-    # def get_athlete(self, pk):
-    #     try:
-    #         return Athlete.objects.get(pk=pk)
-    #     except Athlete.DoesNotExist:
-    #         raise Http404
+#     def get_athlete(self, pk):
+#         try:
+#             return Athlete.objects.get(pk=pk)
+#         except Athlete.DoesNotExist:
+#             raise Http404
 
     # def get(self, request, pk, format=None):
     #     athlete = self.get_athlete(pk)
