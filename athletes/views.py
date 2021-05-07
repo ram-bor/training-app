@@ -27,12 +27,15 @@ class AthleteCreate(View):
         if form.is_valid():
             athlete = form.save()
             return redirect('athlete_info', pk=athlete.pk)
-
         return render(request, self.template_name, {'form': form})
 
 
-class AthleteInfo(generics.RetrieveUpdateDestroyAPIView):
+class AthleteList(generics.ListCreateAPIView):
+    queryset = Athlete.objects.all()
+    serializer_class = AthleteSerializer
 
+
+class AthleteInfo(generics.RetrieveUpdateDestroyAPIView):
     queryset = Athlete.objects.all()
     serializer_class = AthleteSerializer
     permissions_classes = (permissions.IsAuthenticated)
