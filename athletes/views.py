@@ -35,10 +35,15 @@ class AthleteList(generics.ListCreateAPIView):
     serializer_class = AthleteSerializer
 
 
-# class AthleteInfo(generics.RetrieveUpdateDestroyAPIView):
-#     queryset = Athlete.objects.all()
-#     serializer_class = AthleteSerializer
-#     permissions_classes = (permissions.IsAuthenticated)
+def random_function() {
+    print('hello world')
+}
+
+
+class AthleteInfo(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Athlete.objects.all()
+    serializer_class = AthleteSerializer
+    permissions_classes = (permissions.IsAuthenticated)
 
 # class AthleteInfo(APIView):
 #     template_name = 'athlete_info.html'
